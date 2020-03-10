@@ -1,10 +1,15 @@
 import React from 'react';
 import styles from './index.less';
 
-export default () => {
-  return (
-    <div>
-      <h1 className={styles.title}>Page index</h1>
-    </div>
-  );
+class home extends React.Component {
+  render() {
+    return (
+      <div>
+        <div>最新动态</div>
+        <div>技术分享</div>
+        <div>留言板</div>
+      </div>
+    );
+  }
 }
+export default home;
