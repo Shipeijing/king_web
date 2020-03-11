@@ -19,6 +19,7 @@
     ]
   },
   "dependencies": {
+    "@umijs/hooks": "^1.7.0",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.0.6",
     "lint-staged": "^10.0.7",

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './index.less';
+import styles from './styles.less';
 
 class home extends React.Component {
   render() {

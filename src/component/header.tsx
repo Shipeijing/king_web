@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './index.less';
 import { Menu } from 'antd';
 import { history } from 'umi';
@@ -8,15 +8,11 @@ import {
   HourglassOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-class myHeader extends React.Component {
-  state = {
-    current: 'home',
-  };
-  handleClick = (e: any) => {
+export default function header() {
+  const [current, setCurrent] = useState('home')
+  const handleClick = (e: any) => {
     console.log('click ', e);
-    this.setState({
-      current: e.key,
-    });
+    setCurrent(e.key);
     switch (e.key) {
       case 'home':
         history.push('/');
@@ -31,33 +27,36 @@ class myHeader extends React.Component {
         history.push('/user');
         break;
     }
-  };
-  render() {
-    return (
-      <div className={styles.header}>
-        <Menu
-          onClick={this.handleClick}
-          selectedKeys={[this.state.current]}
-          mode="horizontal"
-        >
-          <Menu.Item key="home">
-            <HomeOutlined />
-            主页
-          </Menu.Item>
-          <Menu.Item key="topic">
-            <HourglassOutlined />
-            动态
-          </Menu.Item>
-          <Menu.Item key="message">
-            <MailOutlined />
-            留言
-          </Menu.Item>
-          <Menu.Item key="user">
-            <UserOutlined />我
-          </Menu.Item>
-        </Menu>
-      </div>
-    );
   }
+  useEffect(() => {
+    //挂载时执行
+    return () => {
+      //销毁时执行
+    }
+  })
+  return (
+    <div className={styles.header}>
+      <Menu
+        onClick={handleClick}
+        selectedKeys={[current]}
+        mode="horizontal"
+      >
+        <Menu.Item key="home">
+          <HomeOutlined />
+          主页
+          </Menu.Item>
+        <Menu.Item key="topic">
+          <HourglassOutlined />
+          动态
+          </Menu.Item>
+        <Menu.Item key="message">
+          <MailOutlined />
+          留言
+          </Menu.Item>
+        <Menu.Item key="user">
+          <UserOutlined />我
+          </Menu.Item>
+      </Menu>
+    </div>
+  )
 }
-export default myHeader;
