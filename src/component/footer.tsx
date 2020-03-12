@@ -3,7 +3,7 @@ import styles from './index.less';
 
 class home extends React.Component {
   render() {
-    return <div>这是首xxxxxx页</div>;
+    return <div>页脚</div>;
   }
 }
 export default home;

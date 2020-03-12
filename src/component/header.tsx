@@ -11,7 +11,6 @@ import {
 export default function header() {
   const [current, setCurrent] = useState('home')
   const handleClick = (e: any) => {
-    console.log('click ', e);
     setCurrent(e.key);
     switch (e.key) {
       case 'home':

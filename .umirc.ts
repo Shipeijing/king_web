@@ -2,7 +2,17 @@ import { defineConfig } from 'umi';
 export default defineConfig({
   dva: {
     hmr: true,
-    skipModelValidate: true
+    //skipModelValidate: true
+  },
+  request: {
+    dataField: 'data',
+  },
+  proxy: {
+    '/king': {
+      'target': 'http://jsonplaceholder.typicode.com/',
+      'changeOrigin': true,
+      'pathRewrite': { '^/king': '' },
+    },
   },
   routes: [
     {
