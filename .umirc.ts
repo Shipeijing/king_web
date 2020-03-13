@@ -7,13 +7,6 @@ export default defineConfig({
   request: {
     dataField: 'data',
   },
-  proxy: {
-    '/king': {
-      'target': 'http://jsonplaceholder.typicode.com/',
-      'changeOrigin': true,
-      'pathRewrite': { '^/king': '' },
-    },
-  },
   routes: [
     {
       path: '/',

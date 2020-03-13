@@ -11,7 +11,9 @@ export default {
     reducers: {
         changedataList(state, { payload }) {
             console.log(payload)
-            return state.dataList = payload
+            return {
+                dataList: payload
+            }
         }
     },
     effects: {

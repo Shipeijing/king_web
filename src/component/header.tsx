@@ -9,26 +9,26 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 export default function header() {
-  const [current, setCurrent] = useState('home')
+  const [current, setCurrent] = useState('/')
   const handleClick = (e: any) => {
     setCurrent(e.key);
     switch (e.key) {
-      case 'home':
+      case '/':
         history.push('/');
         break;
-      case 'topic':
+      case '/topic':
         history.push('/topic');
         break;
-      case 'message':
+      case '/message':
         history.push('/message');
         break;
-      case 'user':
+      case '/user':
         history.push('/user');
         break;
     }
   }
   useEffect(() => {
-    //挂载时执行
+    setCurrent(history.location.pathname)
     return () => {
       //销毁时执行
     }
@@ -40,19 +40,19 @@ export default function header() {
         selectedKeys={[current]}
         mode="horizontal"
       >
-        <Menu.Item key="home">
+        <Menu.Item key="/">
           <HomeOutlined />
           主页
           </Menu.Item>
-        <Menu.Item key="topic">
+        <Menu.Item key="/topic">
           <HourglassOutlined />
           动态
           </Menu.Item>
-        <Menu.Item key="message">
+        <Menu.Item key="/message">
           <MailOutlined />
           留言
           </Menu.Item>
-        <Menu.Item key="user">
+        <Menu.Item key="/user">
           <UserOutlined />我
           </Menu.Item>
       </Menu>

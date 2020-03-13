@@ -3,7 +3,7 @@ import styles from './index.less';
 
 class home extends React.Component {
   render() {
-    return <div>页脚</div>;
+    return <div className={styles.footer}></div>;
   }
 }
 export default home;
